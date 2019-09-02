@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+html, body
+{
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+}
+
+.navbar
+{
+    padding: .8rem;
+    background-color: #315B75;
+    color: #CBE0B4;
+}
+
+.espaciador{
+    padding-bottom: 60px;
+}
+
+#arriba-footer{
+    padding-bottom: 300px;
+}
+
+#despues-carrusel{
+    padding-top: 30px;
+}
+
+#despues-nav{
+    padding-bottom: 330px;
+}
+
+#despues-nav-citas{
+    padding-bottom: 330px;
+}
+
+#entre-rows{
+    padding-bottom: 500px;
+}
+
+.navbar-light .nav-item.active .nav-link,
+.navbar-light .nav-item:focus .nav-link,
+.navbar-light .nav-item:hover .nav-link {
+    background-color: #315B75;
+    color: #CBE0B4;
+}
+#top{
+    background-color: #315B75 !important;
+    color: #CBE0B4;
+}
+.navbar-nav li{
+    padding-right: 20px;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+}
+
+.carousel-inner img{
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-caption{
+    position: absolute;
+    top: 65%;
+    transform: translateY(-50%);
+}
+
+.carousel-caption h1{
+    font-size: 400%;
+    color: #CBE0B4;
+    font-weight:500 ;
+    text-transform: uppercase;
+    text-shadow: 5px 5px 10px #242645;
+}
+
+.carousel-caption h3{
+    font-size: 150%;
+    font-weight: 500;
+    color: #ff8040;
+    padding-bottom: 1rem;
+}
+
+.padding{
+    padding-bottom: 2rem;
+}
+
+.btn-home{
+	color: #ff8040;
+	outline-color: #ff8040;
+	border-color: #ff8040;
+}
+
+.btn.btn-home:hover,
+.btn.btn-home:focus {
+  background-color: #ff8040 !important;
+  outline-color: #ff8040;
+  border-color: #ff8040;
+  color: white;
+}
+
+
+.welcome{
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+.welcome hr{
+    border-top: 2px solid #242645;
+    width: 95%;
+    margin-top: .3rem;
+    margin-bottom: 1rem;
+}
+
+.fa-heartbeat{
+    color: blue;
+    font-size: 5rem;
+}
+
+
+.fa-apple-alt{
+    color:red;
+    font-size: 5rem;
+}
+.fa-dumbbell{
+    color:green;
+    font-size: 5rem;
+}
+
+#btn-conoce{
+    margin-left: 50%;
+}
+
+.rounded{
+    padding-top: 30px;
+}
+
+.social a{
+    font-size: 4.5rem;
+    padding: 5rem;
+}
+
+.fa-facebook{
+    color: #3b5998;
+}
+
+.fa-twitter{
+    color: #00aced;
+}
+
+.fa-instagram{
+    color:#517fa4;
+}
+
+.fa-youtube{
+    color:#bb0000;
+}
+
+.fa-facebook:hover,
+.fa-instagram:hover,
+.fa-twitter:hover,
+.fa-youtube:hover{
+    color: #d5d5d5;
+}
+
+footer{
+    background-color: #3f3f3f;
+    color: #d5d5d5;
+    padding-top: 2rem;
+}
+
+hr.light{
+    border-top: 3px solid #d5d5d5;
+    width: 75%;
+    margin-top: .8rem;
+    margin-bottom: 1rem;
+}
+
+.my-4{
+    border-top: 3px solid rgb(153, 140, 140);
+    width: 75%;
+}
+
+/*LOGIN FORM */
+
+.login-box {
+    width: 320px;
+    height: 420px;
+    background: #00ABA2;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+  }
+  
+  .login-box h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+  }
+  
+  .login-box label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+  }
+  
+  .login-box input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .login-box input[type="text"], .login-box input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  /* LOGIN   */ 
+  .login-box input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #ff8040;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+  }
+  
+  .login-box input[type="submit"]:hover {
+    cursor: pointer;
+    background: #242645;
+    color: white;
+  }
+  
+  .login-box a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: white;
+  }
+  
+  .login-box a:hover {
+    color: #fff;
+  }
+
+
+/*-------Media Queries--------*/
+@media (max-width: 992px){
+    .social a{
+        font-size: 4em;
+        padding: 2rem;
+    }
+
+    .mision{
+        margin-left: 20px;
+    }
+    
+    #btn-conoce{
+        margin-left: 40%;
+    }
+}
+
+@media (max-width: 768px){
+    .carousel-caption{
+        top: 65%;
+    }
+    
+    .carousel-caption h1{
+        font-size: 150%;
+    }
+    
+    .carousel-caption h3{
+        font-size: 100%;
+        font-weight: 400;
+        padding-bottom:0.2rem;
+    }
+
+    .carousel-caption .btn{
+        font-size: 95%;
+        padding: 8px 14px;
+    }
+    
+    .display-4 {
+        font-size: 200%;
+    }
+
+    .social a {
+        font-size: 2.5em;
+        padding: 1.2rem;
+    }
+
+    .mision{
+        margin-left: 20px;
+    }
+
+    #btn-conoce{
+        margin-left: 35%;
+    }
+
+}
+
+@media (max-width: 576px){
+    .carousel-caption{
+        top: 65%;
+    }
+    
+    .carousel-caption h1{
+        font-size: 100%;
+    }
+    
+    .carousel-caption h3{
+        font-size: 70%;
+    }
+
+    .carousel-caption .btn{
+        font-size: 70%;
+        padding: 4px 8px;
+    }
+
+    .carousel-indicators{
+        display:none;
+    }
+
+    .display-4 {
+        font-size: 160%;
+    }
+
+    .social a {
+        font-size: 2em;
+        padding: 0.7rem;
+    }
+
+    #btn-conoce{
+        margin-left: 30%;
+    }
+    
+}
