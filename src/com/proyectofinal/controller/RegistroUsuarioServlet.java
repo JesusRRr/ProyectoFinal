@@ -84,10 +84,12 @@ public class RegistroUsuarioServlet extends HttpServlet {
 			if(ban==true) {
 				HttpSession session = request.getSession();
 				session.setAttribute("usuario", usuario);
-				//response.sendRedirect("Bienvenido.jsp");
+				//salida.print("Se armo");
+				response.sendRedirect("Bienvenido.jsp");
 				
 			}else {
 				response.sendRedirect("Error.jsp");
+				//salida.print("Nel pastel");
 			}
 		
 			

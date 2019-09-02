@@ -7,6 +7,13 @@
 <title>Bienvenido</title>
 </head>
 <body>
-	<h2>Bienvenido<h2>
+	
+	
+	<%if(session.getAttribute("usuario")==null){
+		response.sendRedirect("login.jsp");
+	}
+	%>
+	
+	<h2>Bienvenido</h2>
 </body>
 </html>
