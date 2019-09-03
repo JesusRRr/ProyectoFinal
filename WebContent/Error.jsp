@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="css/style.css">
     <title> Error </title>
 </head>
-<body>
+<body class="body-error">
 <!--Navegador-->
     <nav class="navbar navbar-expand-md navbar-dark bg-light fixed-top" id="top">
-        <div class="container-fluid">
+        <div class="container-fluid error">
             <a class="navbar-brand" href="index.jsp"><img src="images/logo.png" width="50" alt="logo">  Centro de Salud</a>
     
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -46,24 +46,21 @@
         </div>
     </nav>
     
-    <div class="container-fluid">
-        <div class="espaciador" id="despues-nav"></div>
-    </div>
-    
-    <!-- Container Principal -->
-    <div class="container">
-        <div class="row">
-            <div class="col">
-            <h1 id="error">Error! :(</h1>
-            <h3>Lo sentimos, el usuario o la contraseña que ingresaste no fue la correcta por favor vuelve a intentarlo.</h3>
-            <a href="login.jsp"><button class="btn btn-outline-warning">Volver a Intentar</button></a>
-            </div>
-        </div>
-    </div>
 
+    <img src="images/error.jpg" class="thumbnail img-error " alt="error">
+    <!-- Container Principal -->
     <div class="container-fluid">
-            <div class="espaciador" id="arriba-footer"></div>
-        </div>
+     
+            
+	           
+			            <div class="error">
+			            	<h1>Error! :(</h1>
+			            	<p>Lo sentimos, el usuario o la contraseña que ingresaste no fue la correcta por favor vuelve a intentarlo.</p>
+			            	<a href="login.jsp"><button class="btn btn-warning">Volver a Intentar</button></a>
+			            </div>
+		    
+   </div>
+     
 
             <!-- Footer -->
         <footer>

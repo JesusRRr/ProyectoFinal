@@ -54,7 +54,7 @@
     <div class="container">
         <div class="row">            
              <div class="col">
-                <div class="card-body">
+                <div class="card-body border">
                     <h1>Inicia sesión aquí:   </h1>
                     <hr>
                     <form action ="RegistroUsuarioServlet" method = "POST">

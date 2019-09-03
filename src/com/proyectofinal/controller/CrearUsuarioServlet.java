@@ -47,7 +47,12 @@ public class CrearUsuarioServlet extends HttpServlet {
 		String emailUsuario=request.getParameter("emailUsuario");
 		String passUsuario=request.getParameter("passUsuario");
 		
-	
+		if(nombreUsuario=="" && emailUsuario=="" &&passUsuario=="") {
+			response.sendRedirect("Error.jsp");
+		}else {
+			response.sendRedirect("login.jsp");
+		}
+		
 		Usuario usuario = new Usuario();
 	
 		usuario.setNombreUsuario(nombreUsuario);
