@@ -75,7 +75,7 @@ public class RegistroUsuarioServlet extends HttpServlet {
 					usuario.setNombreUsuario(rs.getString(2));
 					usuario.setEmailUsuario(rs.getString(3));
 					usuario.setPassUsuario(rs.getString(4));
-					salida.print("Usuario correcto con id"+usuario);
+					//salida.print("Usuario correcto con id"+usuario);
 					ban=true;
 				}
 				
