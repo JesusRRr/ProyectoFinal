@@ -63,7 +63,7 @@
                     <img src="images/doctora2.jpg" class="img-fluid">
                     <div class="carousel-caption">
                         <h1 class="display-2">Centro Salud</h1>
-                        <a href="login.jsp"><button type="button" class="btn btn-home btn-lg">Registrate!</button></a>
+                        <a href="register.jsp"><button type="button" class="btn btn-home btn-lg">Registrate!</button></a>
                     </div>
                 </div>
                 <div class="carousel-item">

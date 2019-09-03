@@ -24,9 +24,6 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav" id="main-menu">
                     <li class="nav-item">
-                        <a href="citas.jsp" class="nav-link">Citas</a>
-                    </li>
-                    <li class="nav-item">
                         <a href="index.jsp#doctores" class="nav-link">Doctores</a>
                     </li>
                     <li class="nav-item">
@@ -41,6 +38,9 @@
                     <li class="nav-item">
                         <a href="login.jsp" class="nav-link">Login</a>
                     </li>
+                    <li class="nav-item">
+                    	<a href="register.jsp" class="nav-link">Registro</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -52,37 +52,27 @@
     
     <!-- Container Principal -->
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="card-body">
-                    <h1>Registrate aquí: </h1>
-                    <form action ="CrearUsuarioServlet" method = "POST">
-                        <!-- Nombre -->
-                        <label for="nombreUsuario">Nombre: </label>
-                        <input type="text" placeholder="ingresa tu nombre completo" id="nombreUsuario" name="nombreUsuario">
-                        <!-- Correo -->
-                        <label for="emailUsuario">Correo: </label>
-                        <input type="text" placeholder="Ingresa tu email" id="emailUsuario" name="emailUsuario">
-                        <!-- PASSWORD INPUT -->
-                        <label for="passUsuario">Contraseña: </label>
-                        <input type="password" placeholder="Ingresa contraseña" id="passUsuario" name="passUsuario">
-                        <input type="submit" value="Registrar">
-                    </form>
-                </div>
-            </div>
-            
+        <div class="row">            
              <div class="col">
                 <div class="card-body">
-                    <h1>Inicia sesión aquí: </h1>
+                    <h1>Inicia sesión aquí:   </h1>
+                    <hr>
                     <form action ="RegistroUsuarioServlet" method = "POST">
+                    
                       
                         <!-- Correo -->
-                        <label for="txtEmail2">Correo: </label>
-                        <input type="text" placeholder="Ingresa tu email" id="emailUsuario2" name="emailUsuario2">
+                        <p>
+                        	<label for="txtEmail2">Correo:    </label>
+                        	<input type="text" placeholder="Ingresa tu email" id="emailUsuario2" name="emailUsuario2" class="pull-right">
+                        </p>
                         <!-- PASSWORD INPUT -->
-                        <label for="pswd2">Contraseña: </label>
-                        <input type="password" placeholder="Ingresa contraseña" id="passUsuario2" name="passUsuario2">
-                        <input type="submit" value="Registrar">
+                        <p>
+                        	<label for="pswd2">Contraseña: </label>
+                        	<input type="password" placeholder="Ingresa contraseña" id="passUsuario2" name="passUsuario2" class="pull-right">
+                        </p>
+                        <p>
+                        	<input type="submit" value="Inicia Sesión" class="btn btn-primary">
+                        </p>
                     </form>
                 </div>
             </div>

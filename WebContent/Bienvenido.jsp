@@ -15,13 +15,18 @@
 <!--Navegador-->
 
         <% 
-        if(session.getAttribute("usuario")==null){
+        if(session.getAttribute("nombreUsuario")==null){
+        	out.print("Que once");
             response.sendRedirect("login.jsp");
         }
 
         //session.removeAttribute("usuario");
         //request.getRequestDispatcher("index.jsp").forward(request, response);
         %>
+        
+        <%! String nombre=""; %>
+        
+        <%nombre=session.getAttribute("nombreUsuario").toString(); %>
     <nav class="navbar navbar-expand-md navbar-dark bg-light fixed-top" id="top">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.jsp"><img src="images/logo.png" width="50" alt="logo">  Centro de Salud</a>
@@ -61,7 +66,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-            <h1 id="bienvenido">Bienvenido! :)</h1>
+            <h1 id="bienvenido">Bienvenido <% out.print(nombre); %>! :)</h1>
             <h3>A continuación serás capaz de obtener tu cita con uno de nuestro equipo de profesionales.</h3>
             <a href="citas.jsp"><button class="btn btn-outline-warning">Obtener Cita</button></a>
             </div>

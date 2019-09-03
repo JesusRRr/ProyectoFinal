@@ -75,7 +75,7 @@ public class RegistroUsuarioServlet extends HttpServlet {
 					usuario.setNombreUsuario(rs.getString(2));
 					usuario.setEmailUsuario(rs.getString(3));
 					usuario.setPassUsuario(rs.getString(4));
-					//salida.print("Usuario correcto con id"+usuario);
+					salida.print("Usuario correcto con id"+usuario);
 					ban=true;
 				}
 				
@@ -83,7 +83,8 @@ public class RegistroUsuarioServlet extends HttpServlet {
 			
 			if(ban==true) {
 				HttpSession session = request.getSession();
-				session.setAttribute("usuario", usuario);
+				session.setAttribute("nombreUsuario", usuario.getNombreUsuario());
+				session.setAttribute("idUsuario",usuario.getIdUsuario());
 				//salida.print("Se armo");
 				response.sendRedirect("Bienvenido.jsp");
 				
