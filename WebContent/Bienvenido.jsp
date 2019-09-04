@@ -15,15 +15,11 @@
 <!--Navegador-->
 
         <% 
-        if(session.getAttribute("nombreUsuario")==null){
+        if(session.getAttribute("nombreUsuario")=="no"){
         	//out.print("Que once");
             response.sendRedirect("login.jsp");
-            
+        
         }
-
-        //session.removeAttribute("usuario");
-        //request.getRequestDispatcher("index.jsp").forward(request, response);
-        	System.out.println("Hey"+session.getAttribute("nombreUsuario").toString());
         %>
         
         
@@ -51,12 +47,12 @@
     
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                   
-                    	<form name="LogoutServlet" method="POST">
-	                        <input type="submit" value="Logout" 
-	                        class="btn btn-outline-secondary nav-link"
-	                        name="btnLogout">
-                        </form>
+                   	<form action="LogoutServlet" method="POST">
+                        <input type="submit" value="Logout" 
+                        class="btn btn-outline-secondary"
+	                   	name="btnLogout">
+                    </form>
+                    	
                         
                     </li>
                     
@@ -84,6 +80,8 @@
             </div>
         </div>
     </div>
+    
+    
 
     <div class="container-fluid">
             <div class="espaciador" id="arriba-footer"></div>

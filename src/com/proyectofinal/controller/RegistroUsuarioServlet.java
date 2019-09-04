@@ -95,9 +95,7 @@ public class RegistroUsuarioServlet extends HttpServlet {
 				response.sendRedirect("Bienvenido.jsp");
 				
 			}else {
-				HttpSession session = request.getSession();
-				session.setAttribute("nombreUsuario",null);
-				System.out.println("Envio de :"+session.getAttribute("nombreUsuario").toString());
+				
 				response.sendRedirect("Error.jsp");
 				//salida.print("Nel pastel");
 			}
