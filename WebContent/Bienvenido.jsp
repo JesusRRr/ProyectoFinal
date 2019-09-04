@@ -80,6 +80,35 @@
             </div>
         </div>
     </div>
+    		<%@page import="java.util.ArrayList" %>
+    		<%@page import="com.proyectofinal.model.Fecha" %>
+			<%! ArrayList<String> fechas = new ArrayList<String>();%>
+			
+			<% 
+				
+			%>	 
+			 
+			 
+    		<div class="container">
+    			<form>
+    				<select class="form-control">
+    					
+    					<% for(String fecha : fechas){ %>
+    							
+    						<option> <%=fecha%> </option>
+    					
+    					<%}%>
+    					
+    					
+    					
+    					
+    				</select>
+    			</form>
+    			
+    			
+    		</div>
+    
+    
     
     
 

@@ -46,8 +46,11 @@ public class CrearUsuarioServlet extends HttpServlet {
 		String nombreUsuario=request.getParameter("nombreUsuario");
 		String emailUsuario=request.getParameter("emailUsuario");
 		String passUsuario=request.getParameter("passUsuario");
+		boolean banError=false;
 		
 		if(nombreUsuario=="" && emailUsuario=="" &&passUsuario=="") {
+			banError=true;
+			
 			response.sendRedirect("Error.jsp");
 		}else {
 			response.sendRedirect("login.jsp");
@@ -64,20 +67,22 @@ public class CrearUsuarioServlet extends HttpServlet {
 		
 			conn = DriverManager.getConnection(urlServidor,user,pass);
 			
-			sentenciaSQL="INSERT INTO Usuario "
-					+ "(nombreUsuario, emailUsuario, passUsuario) "
-					+ "values(?,?,?)";
-			
-			ps = conn.prepareStatement(sentenciaSQL);
-			
-			ps.setString(1,usuario.getNombreUsuario());
-			ps.setString(2,usuario.getEmailUsuario());
-			ps.setString(3,usuario.getPassUsuario());
-			
-			ps.executeUpdate();
-			salida.print(ps);
-			
-			ps.close();
+			if(banError==false) {
+				sentenciaSQL="INSERT INTO Usuario "
+						+ "(nombreUsuario, emailUsuario, passUsuario) "
+						+ "values(?,?,?)";
+				
+				ps = conn.prepareStatement(sentenciaSQL);
+				
+				ps.setString(1,usuario.getNombreUsuario());
+				ps.setString(2,usuario.getEmailUsuario());
+				ps.setString(3,usuario.getPassUsuario());
+				
+				ps.executeUpdate();
+				salida.print(ps);
+				
+				ps.close();
+			}
 			conn.close();
 			salida.close();
 			

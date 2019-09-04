@@ -22,9 +22,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav" id="main-menu">
-                        <li class="nav-item">
-                            <a href="citas.jsp" class="nav-link">Citas</a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a href="#doctores" class="nav-link">Doctores</a>
                         </li>

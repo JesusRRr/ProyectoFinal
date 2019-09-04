@@ -64,7 +64,7 @@
 		                        		</div>
 		                        	
 		                        		<div class="col-12 mx-4">
-		                        			<label for="txtEmail2">Correo:    </label>
+		                        			<label for="emailUsuario2">Correo:    </label>
 		                        		</div>
 		                        		
 		                        		<div class="col-12 mx-4">
@@ -73,7 +73,7 @@
 		                       		
 		                        <!-- PASSWORD INPUT -->
 		                        		<div class="col-12 mx-4 my-2">
-		                        			<label for="pswd2">Contraseña: </label>
+		                        			<label for="passUsuario2">Contraseña: </label>
 		                        		</div>
 		                        		
 		                        		<div class="col-12 mx-4">

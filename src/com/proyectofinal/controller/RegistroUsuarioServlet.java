@@ -52,12 +52,15 @@ public class RegistroUsuarioServlet extends HttpServlet {
 		String passUsuario=request.getParameter("passUsuario2");
 		ArrayList<Usuario> Usuarios = new ArrayList<Usuario>();
 		boolean ban=false;
+		boolean banError=false;
 		
 		System.out.print(emailUsuario+passUsuario);
 		
 		Usuario usuario = new Usuario();
 		if(emailUsuario=="" && passUsuario=="") {
+			banError=true;
 			response.sendRedirect("Error.jsp");
+						
 		}
 		
 		try {
@@ -74,7 +77,8 @@ public class RegistroUsuarioServlet extends HttpServlet {
 			while(rs.next()) {
 				
 				if(emailUsuario.equals(rs.getString(3))
-						&& passUsuario.equals(rs.getString(4))) {
+						&& passUsuario.equals(rs.getString(4))
+								&&banError==false) {
 					
 					usuario.setIdUsuario(rs.getInt(1));
 					usuario.setNombreUsuario(rs.getString(2));
