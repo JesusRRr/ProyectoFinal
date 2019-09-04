@@ -101,7 +101,7 @@ html, body
 	text-shadow: 2px 2px black;
 	background:#808080;
 	opacity:0.8;
-	font-size:2rem;
+	font-size:1.5rem;
 }
 
 .error h1{
@@ -114,10 +114,16 @@ html, body
 @media only screen and (max-width: 720px) {
 
    .error p{ 
-    	font-size:1.5rem; 
+    	font-size:1rem; 
+   }
+   
+   .error h1{
+   		font-size:8vw;
    }
 
 }
+
+
 
 .body-error{
 	backgroud:gray;
@@ -127,6 +133,37 @@ html, body
 	width: 100%;
   	height: auto;
 }
+
+.login-general{
+  position: absolute;
+  top:50%;
+  right: 50%;
+  background:gray;
+  opacity:0.8;
+}
+
+.registro-general{
+  position: absolute;
+  top:20%;
+  right: 20%;
+  background:gray;
+  opacity:0.8;
+}
+
+@media only screen and (max-width: 500px) {
+
+   .registo-general input{ 
+    	font-size:1rem; 
+   }
+  
+   .login-general h1{
+    	 font-size:20px;
+   }
+
+}
+
+	
+
 
 .padding{
     padding-bottom: 2rem;

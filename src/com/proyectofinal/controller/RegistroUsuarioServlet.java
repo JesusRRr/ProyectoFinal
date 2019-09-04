@@ -56,7 +56,7 @@ public class RegistroUsuarioServlet extends HttpServlet {
 		System.out.print(emailUsuario+passUsuario);
 		
 		Usuario usuario = new Usuario();
-		if(emailUsuario=="") {
+		if(emailUsuario=="" && passUsuario=="") {
 			response.sendRedirect("Error.jsp");
 		}
 		
@@ -91,9 +91,13 @@ public class RegistroUsuarioServlet extends HttpServlet {
 				session.setAttribute("nombreUsuario", usuario.getNombreUsuario());
 				//session.setAttribute("idUsuario",usuario.getIdUsuario());
 				//salida.print("Se armo");
+				System.out.println("Envio de :"+session.getAttribute("nombreUsuario").toString());
 				response.sendRedirect("Bienvenido.jsp");
 				
 			}else {
+				HttpSession session = request.getSession();
+				session.setAttribute("nombreUsuario",null);
+				System.out.println("Envio de :"+session.getAttribute("nombreUsuario").toString());
 				response.sendRedirect("Error.jsp");
 				//salida.print("Nel pastel");
 			}

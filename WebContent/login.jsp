@@ -46,44 +46,51 @@
         </div>
     </nav>
     
-    <div class="container-fluid">
-        <div class="espaciador" id="despues-nav"></div>
-    </div>
+   
     
+    <img src="images/millenial-1.jpg" class="thumbnail img-error " alt="millenials">
     <!-- Container Principal -->
-    <div class="container">
-        <div class="row">            
-             <div class="col">
-                <div class="card-body border">
-                    <h1>Inicia sesión aquí:   </h1>
-                    <hr>
-                    <form action ="RegistroUsuarioServlet" method = "POST">
+   
+                    <div class="container border">
                     
-                      
-                        <!-- Correo -->
-                        <p>
-                        	<label for="txtEmail2">Correo:    </label>
-                        	<input type="text" placeholder="Ingresa tu email" id="emailUsuario2" name="emailUsuario2" class="pull-right">
-                        </p>
-                        <!-- PASSWORD INPUT -->
-                        <p>
-                        	<label for="pswd2">Contraseña: </label>
-                        	<input type="password" placeholder="Ingresa contraseña" id="passUsuario2" name="passUsuario2" class="pull-right">
-                        </p>
-                        <p>
-                        	<input type="submit" value="Inicia Sesión" class="btn btn-primary">
-                        </p>
-                    </form>
-                </div>
-            </div>
-            
-        </div>
-    </div>
+                    <div class=login-general>
+	                    <div class="row">
+		                    <form action ="RegistroUsuarioServlet" method = "POST">
+		                    
+		                      
+		                        <!-- Correo -->
+		                        		<div class="col-12 m-4">
+		                        			<h1>Inicia Sesión Aquí</h1>
+		                        		</div>
+		                        	
+		                        		<div class="col-12 mx-4">
+		                        			<label for="txtEmail2">Correo:    </label>
+		                        		</div>
+		                        		
+		                        		<div class="col-12 mx-4">
+		                        			<input type="text" placeholder="Ingresa tu email" id="emailUsuario2" name="emailUsuario2" class="block">
+		                       			</div>
+		                       		
+		                        <!-- PASSWORD INPUT -->
+		                        		<div class="col-12 mx-4 my-2">
+		                        			<label for="pswd2">Contraseña: </label>
+		                        		</div>
+		                        		
+		                        		<div class="col-12 mx-4">
+		                        			<input type="password" placeholder="Ingresa contraseña" id="passUsuario2" name="passUsuario2" class="block">
+		                        		</div>
+		                        	
+		                        		
+		                        	<div class="col-12 mx-4 my-2">
+		                        		<input type="submit" value="Inicia Sesión" class="btn btn-primary">
+		                        	</div>
+		                        </form>
+		                   		</div>
+	                  		</div>
+					</div>                
+          
 
-    <div class="container-fluid">
-            <div class="espaciador" id="arriba-footer"></div>
-        </div>
-
+   
             <!-- Footer -->
         <footer>
             <div class="container-fluid padding">

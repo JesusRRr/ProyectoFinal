@@ -15,15 +15,17 @@
 <!--Navegador-->
 
         <% 
-        if(session.getAttribute("nombreUsuario")==""){
-        	out.print("Que once");
+        if(session.getAttribute("nombreUsuario")==null){
+        	//out.print("Que once");
             response.sendRedirect("login.jsp");
             
         }
 
         //session.removeAttribute("usuario");
         //request.getRequestDispatcher("index.jsp").forward(request, response);
+        	System.out.println("Hey"+session.getAttribute("nombreUsuario").toString());
         %>
+        
         
         
     <nav class="navbar navbar-expand-md navbar-dark bg-light fixed-top" id="top">

@@ -46,47 +46,53 @@
         </div>
     </nav>
     
-    <div class="container-fluid">
-        <div class="espaciador" id="despues-nav"></div>
-    </div>
-    
+   
+    <img src="images/register.jpg" class="img-fluid" id="img-register">
     <!-- Container Principal -->
-    <div class="container" id="img-reg">
-        <div class="row">
-        <div class="col-8">
-        	<img src="images/register.jpg" class="img-fluid" id="img-register">
-        </div>
-            <div class="col-4">
-                <div class="card-body">
-                    <h1>Registrate aquí: </h1>
-                    <hr>
+    <div class="container border">
+                    
+                    <div class="registro-general">
+	                    <div class="row">
+                			
+                  
+                    
                     <form action ="CrearUsuarioServlet" method = "POST">
+                        	<div class="col-12 m-4">
+		                         <h1>Registrate aquí: </h1>
+		                    </div>
                         <!-- Nombre -->
-                        <p>
-                        	<label for="nombreUsuario">Nombre: </label>
-                        	<input type="text" placeholder="ingresa tu nombre completo" id="nombreUsuario" name="nombreUsuario" class="pull-right">
-                        </p>
+                       		<div class="col-12 mx-4">
+                        		<label for="nombreUsuario">Nombre: </label>
+                        	</div>
+                        	
+                        	<div class="col-12 mx-4 my-1">
+                        		<input type="text" placeholder="ingresa tu nombre completo" id="nombreUsuario" name="nombreUsuario" class="block">
+                       		</div>
+                       		
                         <!-- Correo -->
-                        <p>
-                        	<label for="emailUsuario">Correo: </label>
-                        	<input type="text" placeholder="Ingresa tu email" id="emailUsuario" name="emailUsuario" class="pull-right">
-                        </p>
+                       		<div class="col-12 mx-4 ">
+                        		<label for="emailUsuario">Correo: </label>
+                        	</div>
+                        		
+                        	<div class="col-12 mx-4 my-1">
+                        		<input type="text" placeholder="Ingresa tu email" id="emailUsuario" name="emailUsuario" class="block">
+                        	</div>
                         <!-- PASSWORD INPUT -->
-                        <p>
-                        	<label for="passUsuario">Contraseña: </label>
-                        	<input type="password" placeholder="Ingresa contraseña" id="passUsuario" name="passUsuario" class="pull-right">
-                        </p>
-                        <p>
-                        	<input type="submit" value="Registrar" class="btn btn-primary">
-                        </p>
+                        
+                        	<div class="col-12 mx-4">
+                        		<label for="passUsuario">Contraseña: </label>
+                        	</div>
+                        	
+                        	<div class="col-12 mx-4 my-1">
+                        		<input type="password" placeholder="Ingresa contraseña" id="passUsuario" name="passUsuario" class="block">
+                        	</div>
+                        
+                        	<div class="col-12 mx-4 mb-4">
+                        		<input type="submit" value="Registrar" class="btn btn-primary">
+                        	</div>
                     </form>
                 </div>
             </div>           
-        </div>
-    </div>
-
-    <div class="container-fluid">
-            <div class="espaciador" id="arriba-footer"></div>
         </div>
 
             <!-- Footer -->
