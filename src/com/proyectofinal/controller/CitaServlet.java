@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -52,9 +53,7 @@ public class CitaServlet extends HttpServlet {
 		String user="root";
 		String pass="root";
 		String sentenciaSQL="";
-		
-		
-
+		ResultSet rs=null;
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
@@ -68,6 +67,7 @@ public class CitaServlet extends HttpServlet {
 				cita.setIdUsuario(Integer.parseInt(session.getAttribute("idUsuario").toString()));
 				cita.setDiaCita(request.getParameter("cita"));
 				
+				
 				sentenciaSQL="INSERT INTO cita "
 						+ "(diaCita, idUsuario) "
 						+ "values(?,?)";
@@ -79,18 +79,17 @@ public class CitaServlet extends HttpServlet {
 				
 				
 				ps.executeUpdate();
-				salida.print(ps);
-				
+				response.sendRedirect("index.jsp");				
 				ps.close();
 			
 			conn.close();
 			salida.close();
+
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-				
 	}
 
 }

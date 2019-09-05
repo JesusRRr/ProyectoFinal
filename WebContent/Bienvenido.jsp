@@ -89,17 +89,21 @@
 			 
 			 
     		
-    			<form action="CitaServlet" method="POST">
+    			<form action="" method="">
     				<label for="cita" class="m-2">Registra el dia de tu cita</label>
     				<input type="date" id="cita" name="cita"
     				value="<%=minDay%>" min="<%=minDay%>" max="<%=maxDay%>"
     				class="form-control m-2">
     				
     				<br>
-    				<input type="submit" value="Registra tu cita" 
+    				<input onclick="miFuncion()" type="submit" value="Registra tu cita" 
     				class="btn btn-success m-2" id="cita">
     			
     			</form>
+    				
+    			
+    			
+    			
     			
     			
     		</div>
@@ -146,5 +150,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
 <script src="https://kit.fontawesome.com/1967fff348.js"></script>
+<script src="js/script.js"></script>
 
 </html>
