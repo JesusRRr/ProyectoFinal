@@ -129,6 +129,10 @@ html, body
 	backgroud:gray;
 }
 
+.bodyWelcome{
+	background:white;
+}
+
 .img-error{
 	width: 100%;
   	height: auto;
@@ -148,6 +152,18 @@ html, body
   right: 20%;
   background:gray;
   opacity:0.8;
+}
+
+.bienvenido-general{
+  position: absolute;
+  top:20%;
+  right: 20%;
+  background:gray;
+  opacity:0.8;
+}
+
+.bienvdido-general p{
+	color:white;
 }
 
 .padding{

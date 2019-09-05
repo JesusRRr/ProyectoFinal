@@ -93,6 +93,7 @@ public class RegistroUsuarioServlet extends HttpServlet {
 			if(ban==true) {
 				HttpSession session = request.getSession();
 				session.setAttribute("nombreUsuario", usuario.getNombreUsuario());
+				session.setAttribute("idUsuario", usuario.getIdUsuario());
 				//session.setAttribute("idUsuario",usuario.getIdUsuario());
 				//salida.print("Se armo");
 				System.out.println("Envio de :"+session.getAttribute("nombreUsuario").toString());

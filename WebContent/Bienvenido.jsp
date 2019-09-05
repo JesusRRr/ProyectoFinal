@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title> Bienvenido </title>
 </head>
-<body>
+<body class="bodyWelcome">
 <!--Navegador-->
 
         <% 
@@ -61,61 +61,49 @@
         </div>
     </nav>
     
-    <div class="container-fluid">
-        <div class="espaciador" id="despues-nav"></div>
-    </div>
+	<img src="images/pacienteDoctor.jpg" class="img-error">
+	    
     
     <!-- Container Principal -->
-    <div class="container">
-        <div class="row">
-            <div class="col">
-            <h1 id="bienvenido">Bienvenid@
+    <div class="bienvenido-general">
+  
+            <h1 id="bienvenido" class="m-4">Bienvenid@
             <% 
             
             out.print(session.getAttribute("nombreUsuario").toString()); 
             
             %>! :)</h1>
-            <h3>A continuación serás capaz de obtener tu cita con uno de nuestro equipo de profesionales.</h3>
-            <a href="citas.jsp"><button class="btn btn-outline-warning">Obtener Cita</button></a>
-            </div>
-        </div>
-    </div>
+            
+    
     		<%@page import="java.util.ArrayList" %>
     		<%@page import="com.proyectofinal.model.Fecha" %>
 			<%! ArrayList<String> fechas = new ArrayList<String>();%>
+			<%!String minDay; %>
+			<%!String maxDay; %>			
 			
 			<% 
 				
+				minDay=Fecha.getDay();
+				maxDay=Fecha.getFutureDay(30);
 			%>	 
 			 
 			 
-    		<div class="container">
-    			<form>
-    				<select class="form-control">
-    					
-    					<% for(String fecha : fechas){ %>
-    							
-    						<option> <%=fecha%> </option>
-    					
-    					<%}%>
-    					
-    					
-    					
-    					
-    				</select>
+    		
+    			<form action="CitaServlet" method="POST">
+    				<label for="cita" class="m-2">Registra el dia de tu cita</label>
+    				<input type="date" id="cita" name="cita"
+    				value="<%=minDay%>" min="<%=minDay%>" max="<%=maxDay%>"
+    				class="form-control m-2">
+    				
+    				<br>
+    				<input type="submit" value="Registra tu cita" 
+    				class="btn btn-success m-2" id="cita">
+    			
     			</form>
     			
     			
     		</div>
-    
-    
-    
-    
-
-    <div class="container-fluid">
-            <div class="espaciador" id="arriba-footer"></div>
-        </div>
-
+    	    
             <!-- Footer -->
         <footer>
             <div class="container-fluid padding">
