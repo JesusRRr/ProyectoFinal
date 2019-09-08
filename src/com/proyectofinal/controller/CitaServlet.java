@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -56,28 +57,43 @@ public class CitaServlet extends HttpServlet {
 		String sentenciaSQL="";
 		ResultSet rs=null;
 		citas cita = new citas();
-		int idUsuario = 0;
 		
+		String fecha=request.getParameter("cita");
+		ArrayList<String> fechaDB=new ArrayList<String>();
+		ArrayList<Integer> idUsuarioDB=new ArrayList<Integer>();
+		HttpSession session = request.getSession();
+		int idUsuarioSesion= Integer.parseInt(session.getAttribute("idUsuario").toString());
+		boolean usuarioCreado=false;
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
 			conn = DriverManager.getConnection(urlServidor,user,pass);
 			
-			sentenciaSQL="select idUsuario from citas where fecha='2019-09-08'";
+			sentenciaSQL="select * from citas";
 			
 			ps = conn.prepareStatement(sentenciaSQL);
 			
 			rs=ps.executeQuery();
 			
 			while(rs.next()) {
-				
-				idUsuario=rs.getInt(1);
-				salida.print(idUsuario);
+				fechaDB.add(rs.getString(2));
+				idUsuarioDB.add(rs.getInt(3));
+			
 			}
 			
-			if(rs.getRow()==0 && idUsuario==0) {
+			
+			for(Integer i:idUsuarioDB) {
+				if(i==idUsuarioSesion) {
+					usuarioCreado=true;
+				}
+				
+			}
+			
+			salida.print("usuario sesion= "+idUsuarioSesion);
+			
+			if(usuarioCreado==false) {
 				ps=null;
-				HttpSession session = request.getSession();
+				
 				
 				cita.setIdUsuario(Integer.parseInt(session.getAttribute("idUsuario").toString()));
 				cita.setDiaCita(request.getParameter("cita"));
@@ -97,6 +113,7 @@ public class CitaServlet extends HttpServlet {
 			}else {
 				salida.print("El usuario ya tiene cita");
 			}
+			
 			
 			
 		} catch (Exception e) {
