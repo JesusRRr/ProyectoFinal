@@ -38,7 +38,7 @@ public class CrearUsuarioServlet extends HttpServlet {
 		Connection conn = null;
 		PreparedStatement ps= null;
 		
-		String urlServidor="jdbc:mysql://localhost:3306/CentroSauld?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+		String urlServidor="jdbc:mysql://localhost:3306/CentroSalud?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 		String user="root";
 		String pass="root";
 		String sentenciaSQL="";
