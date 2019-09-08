@@ -6,6 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -79,17 +80,26 @@ public class RegistrarServlet extends HttpServlet {
 				ps.setString(3,usuario.getPassUsuario());
 				
 				ps.executeUpdate();
-				salida.print(ps);
 				
-				ps.close();
+				
 			}
-			conn.close();
-			salida.close();
+			
+			
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			try {
+				ps.close();
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		}
+		salida.close();
 				
 	}
 

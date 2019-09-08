@@ -91,7 +91,7 @@
 		<div class=row>
 			<div class="col-12 col-sm-10 col-lg-6">
 
-				<form action="" method="" class="bienvenido-general">
+				<form action="CitaServlet" method="POST" class="bienvenido-general">
 
 					<h1 id="bienvenido" class="m-4">
 						Bienvenid@

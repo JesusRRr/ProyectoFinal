@@ -55,35 +55,49 @@ public class CitaServlet extends HttpServlet {
 		String pass="root";
 		String sentenciaSQL="";
 		ResultSet rs=null;
+		citas cita = new citas();
+		int idUsuario = 0;
+		
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
-		
 			conn = DriverManager.getConnection(urlServidor,user,pass);
 			
-
-				citas cita = new citas();
+			sentenciaSQL="select idUsuario from citas where fecha='2019-09-08'";
+			
+			ps = conn.prepareStatement(sentenciaSQL);
+			
+			rs=ps.executeQuery();
+			
+			while(rs.next()) {
 				
+				idUsuario=rs.getInt(1);
+				salida.print(idUsuario);
+			}
+			
+			if(rs.getRow()==0 && idUsuario==0) {
+				ps=null;
 				HttpSession session = request.getSession();
+				
 				cita.setIdUsuario(Integer.parseInt(session.getAttribute("idUsuario").toString()));
 				cita.setDiaCita(request.getParameter("cita"));
 				
 				
-				sentenciaSQL="INSERT INTO cita "
-						+ "(diaCita, idUsuario) "
-						+ "values(?,?)";
+				sentenciaSQL="insert into citas"
+				+ "(fecha, idUsuario)"
+				+ "values(?,?)";
 				
-				ps = conn.prepareStatement(sentenciaSQL);
-				
-				ps.setString(1,cita.getDiaCita());
-				ps.setInt(2,cita.getIdUsuario());
-				
-				
+				ps=conn.prepareStatement(sentenciaSQL);
+				ps.setString(1, cita.getDiaCita());
+				ps.setInt(2, cita.getIdUsuario());
 				ps.executeUpdate();
-				response.sendRedirect("index.jsp");				
 				
+				salida.print("Usuario registrado");
+				
+			}else {
+				salida.print("El usuario ya tiene cita");
+			}
 			
-
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -97,8 +111,8 @@ public class CitaServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			
-			
 		}
+		
 		salida.close();
 	}
 
