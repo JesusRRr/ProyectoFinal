@@ -58,7 +58,7 @@
 	<div class="container-fluid bg-registro">
 		<div class="row justify-content-center">
 			<div class="col-12 col-sm-10 col-lg-6">
-				<form action="CrearUsuarioServlet" method="POST"
+				<form action="RegistrarServlet" method="POST"
 					class="registro-general">
 
 					<h1>Registrate aquí:</h1>

@@ -20,14 +20,14 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class RegistroUsuarioServlet
  */
-@WebServlet("/RegistroUsuarioServlet")
-public class RegistroUsuarioServlet extends HttpServlet {
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RegistroUsuarioServlet() {
+    public LoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

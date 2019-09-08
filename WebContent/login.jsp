@@ -58,7 +58,7 @@
 
 		<div class="row">
 			<div class="col-12 col-lg-6">
-				<form action="RegistroUsuarioServlet" method="POST"
+				<form action="LoginServlet" method="POST"
 					class="form-container login-general">
 
 					<div class="form-group">

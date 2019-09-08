@@ -48,6 +48,8 @@
 						class="nav-link">Nutriológos</a></li>
 					<li class="nav-item"><a href="index.jsp#entrenadores"
 						class="nav-link">Entrenadores</a></li>
+					<li class="nav-item"><a href="cuenta.jsp"
+						class="nav-link">Mi cuenta</a></li>
 				</ul>
 
 				<ul class="navbar-nav ml-auto">

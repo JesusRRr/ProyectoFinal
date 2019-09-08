@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -49,7 +50,7 @@ public class CitaServlet extends HttpServlet {
 		Connection conn = null;
 		PreparedStatement ps= null;
 		
-		String urlServidor="jdbc:mysql://localhost:3306/CentroSauld?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+		String urlServidor="jdbc:mysql://localhost:3306/CentroSalud?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 		String user="root";
 		String pass="root";
 		String sentenciaSQL="";
@@ -80,16 +81,25 @@ public class CitaServlet extends HttpServlet {
 				
 				ps.executeUpdate();
 				response.sendRedirect("index.jsp");				
-				ps.close();
+				
 			
-			conn.close();
-			salida.close();
 
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			try {
+				ps.close();
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
 		}
+		salida.close();
 	}
 
 }
