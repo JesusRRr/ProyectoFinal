@@ -16,8 +16,39 @@
 <link rel="stylesheet" href="css/style.css">
 <title>Error</title>
 </head>
-<body class="body-error">
+<body >
 	<!--Navegador-->
+	<!--Navegador-->
+	<nav class="navbar navbar-expand-md navbar-dark bg-light fixed-top"
+		id="top">
+		<div class="container-fluid ">
+			<a class="navbar-brand" href="index.jsp"><img
+				src="images/logo.png" width="50" alt="logo"> Centro de Salud</a>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarResponsive">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav" id="main-menu">
+					<li class="nav-item"><a href="index.jsp#doctores"
+						class="nav-link">Doctores</a></li>
+					<li class="nav-item"><a href="index.jsp#nutriologos"
+						class="nav-link">Nutriológos</a></li>
+					<li class="nav-item"><a href="index.jsp#entrenadores"
+						class="nav-link">Entrenadores</a></li>
+				</ul>
+
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a href="login.jsp" class="nav-link">Login</a>
+					</li>
+					<li class="nav-item"><a href="register.jsp" class="nav-link">Registro</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
 
 
@@ -33,6 +64,45 @@
 
 		</div>
 	</div>
+	
+	<!-- Footer -->
+	<footer>
+		<div class="container-fluid  fixed">
+			<div class="row text-center">
+				<div class="col-md-4">
+					<hr class="light">
+					<h5>Contacto</h5>
+					<hr class="light">
+					<p>Número de telefono: (331) 097 7580</p>
+					<p>Email: aplicacion@salud.com</p>
+					<p>Domicilio: Av. Adolfo López Mateos Sur 2077, Jardines Plaza
+						del Sol, 44510 Guadalajara, Jal.</p>
+				</div>
+				<div class="col-md-4">
+					<hr class="light">
+					<h5>Horario</h5>
+					<hr class="light">
+					<p>Lunes a Viernes: 7:00 a 18:00 hrs</p>
+					<p>Sábado: 8:00 a 15:00 hrs</p>
+					<p>Domingo: Cerrado</p>
+				</div>
+				<div class="col-md-4">
+					<hr class="light">
+					<h5>Sucursales</h5>
+					<hr class="light">
+					<p>IJALTI: Av. Adolfo López Mateos Sur 2077, Jardines Plaza del
+						Sol, 44510 Guadalajara, Jal.</p>
+					<p>Ciudad Creativa Digital: Zona Centro, 44100 Guadalajara,
+						Jal.</p>
+				</div>
+				<div class="col-12">
+					<hr class="light">
+					<h5>&copy; Generation</h5>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
 
 
 </body>
