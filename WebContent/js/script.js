@@ -5,5 +5,5 @@ window.onload=function(){
 
 function miFuncion(day){
 	
-	alert("Se registro con exito tu cita");
+	alert("Verificando si el dia está disponible");
 }

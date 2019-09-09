@@ -64,6 +64,7 @@ public class CitaServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		int idUsuarioSesion= Integer.parseInt(session.getAttribute("idUsuario").toString());
 		boolean usuarioCreado=false;
+		boolean diaOcupado=false;
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
@@ -86,12 +87,16 @@ public class CitaServlet extends HttpServlet {
 				if(i==idUsuarioSesion) {
 					usuarioCreado=true;
 				}
-				
 			}
 			
-			salida.print("usuario sesion= "+idUsuarioSesion);
+			for(String d:fechaDB) {
+				if(fecha.equals(d)) {
+					diaOcupado=true;
+				}
+			}
+					
 			
-			if(usuarioCreado==false) {
+			if(usuarioCreado==false && diaOcupado==false) {
 				ps=null;
 				
 				
@@ -108,10 +113,15 @@ public class CitaServlet extends HttpServlet {
 				ps.setInt(2, cita.getIdUsuario());
 				ps.executeUpdate();
 				
-				salida.print("Usuario registrado");
+	
+				session.setAttribute("fecha",cita.getDiaCita());
+				
+				response.sendRedirect("cuenta.jsp");
 				
 			}else {
-				salida.print("El usuario ya tiene cita");
+				session.setAttribute("fecha",fecha);
+				response.sendRedirect("cuenta.jsp");
+				
 			}
 			
 			

@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -50,9 +51,17 @@ public class LoginServlet extends HttpServlet {
 		
 		String emailUsuario=request.getParameter("emailUsuario2");
 		String passUsuario=request.getParameter("passUsuario2");
-		ArrayList<Usuario> Usuarios = new ArrayList<Usuario>();
+		
 		boolean ban=false;
 		boolean banError=false;
+	
+		ArrayList<Integer> idUsuarioDB=new ArrayList<Integer>();
+		ArrayList<String> fechaDB=new ArrayList<String>();
+		HttpSession session = request.getSession();
+		
+		boolean usuarioCreado=false;
+		boolean diaOcupado=false;
+		String fecha="";
 		
 		System.out.print(emailUsuario+passUsuario);
 		
@@ -91,29 +100,29 @@ public class LoginServlet extends HttpServlet {
 			}
 			
 			if(ban==true) {
-				HttpSession session = request.getSession();
+				
 				session.setAttribute("nombreUsuario", usuario.getNombreUsuario());
 				session.setAttribute("idUsuario", usuario.getIdUsuario());
 				//session.setAttribute("idUsuario",usuario.getIdUsuario());
-				//salida.print("Se armo");
-				System.out.println("Envio de :"+session.getAttribute("nombreUsuario").toString());
 				response.sendRedirect("Bienvenido.jsp");
-				
 			}else {
 				
 				response.sendRedirect("Error.jsp");
-				//salida.print("Nel pastel");
+
 			}
-		
-			
-			ps.close();
-			conn.close();
-			
-			
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			try {
+				ps.close();
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		}
 
 		
